@@ -6,7 +6,7 @@ interface TodoProps {
 
 const  Todo = ({ tasklist, onDelete }: TodoProps) =>{
   return (
-    <div className="mt-5 flex flex-col items-center justify-center font-serif text-[#e0def4]">
+    <div className="mt-5 mb-5 flex flex-col items-center justify-center font-serif text-[#e0def4]">
       {tasklist.map((task,index)  => (
         <div className="mt-6 flex items-center justify-center space-x-10 text-center ">
           <div className="bg-[#31748f] px-3 py-1 rounded text-2xl">{task}</div>
