@@ -2,18 +2,22 @@ import React, { FC, useState } from "react";
 
 import Todo from "./components/Todo";
 
-
-
-
 const App: FC = () => {
   const [task, setTask] = useState("");
   const [taskList, setTasksList] = useState<string[]>([]);
 
   function handleInput(e: React.ChangeEvent<HTMLInputElement>): void {
-    setTask(e.target.value);
+    const input = e.target.value;
+
+    setTask(input);
   }
 
   const addTask = () => {
+
+    if (task === "") {
+      return;
+    }
+    
     setTasksList([...taskList, task]);
     setTask("");
   };
@@ -33,17 +37,13 @@ const App: FC = () => {
         />
         <button
           onClick={addTask}
-          className="rounded font-serif bg-[#ebbcba] px-4 py-1 font-bold text-[#31748f] shadow-md shadow-[#31748f]"
+          className="rounded bg-[#ebbcba] px-4 py-1 font-serif font-bold text-[#31748f] shadow-md shadow-[#31748f]"
         >
           Add
         </button>
       </div>
 
       <Todo tasklist={taskList} />
-
-
-
-
     </div>
   );
 };
