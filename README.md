@@ -1,5 +1,5 @@
 # Todo List
-Check out the live version of the **Todo List** [here][game]!
+Check out the live version of the **Todo List** [here][site]!
 
 [site]: https://todo-swart-chi.vercel.app/
 
