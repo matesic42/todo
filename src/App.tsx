@@ -13,13 +13,18 @@ const App: FC = () => {
   }
 
   const addTask = () => {
-
     if (task === "") {
       return;
     }
-    
+
     setTasksList([...taskList, task]);
     setTask("");
+  };
+
+
+const deleteTask=(taskIndex: number)=> {
+    const newTaskList = taskList.filter((task, index) => index !== taskIndex);
+    setTasksList(newTaskList);
   };
 
   return (
@@ -43,7 +48,7 @@ const App: FC = () => {
         </button>
       </div>
 
-      <Todo tasklist={taskList} />
+      <Todo tasklist={taskList} onDelete={deleteTask} />
     </div>
   );
 };
